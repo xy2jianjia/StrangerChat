@@ -1,0 +1,27 @@
+//
+//  ReplaceView.h
+//  StrangerChat
+//
+//  Created by zxs on 15/11/30.
+//  Copyright (c) 2015年 long. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface ReplaceView : UIView{
+    
+    UIView *allView;
+    UILabel *upLine;
+    UILabel *downLine;
+    UILabel *photo;
+    UILabel *verificat;
+}
+
+@property (nonatomic,strong)UIButton *obtain; // 获取验证
+@property (nonatomic,strong)UITextField *photoNum;
+@property (nonatomic,strong)UITextField *verification;  // 验证ma
+@property (nonatomic,strong)UIButton *seconds;
+
+- (void)addWithphoto:(NSString *)phototext verificat:(NSString *)verification;
+
+@end

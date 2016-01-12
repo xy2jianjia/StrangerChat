@@ -1,0 +1,178 @@
+//
+//  PrefixHeader.pch
+//  StrangerChat
+//
+//  Created by long on 15/10/2.
+//  Copyright (c) 2015年 long. All rights reserved.
+//
+
+#ifndef StrangerChat_PrefixHeader_pch
+#define StrangerChat_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif
+
+#ifndef __OPTIMIZE__
+#define NSLog(...) NSLog(__VA_ARGS__)
+#else
+#define NSLog(...) {}
+
+#endif
+
+// 核对验证码 用户注册 密码重置 提交登陆信息 获取验证码
+#define kServerAddressTest @"http://115.236.55.163:9093/lp-author-msc/"
+// 系统参数请求 加载眼缘数据 请求用户信息 提交用户保存信息 附近人数据 用户详情 搜索数据
+#define kServerAddressTest2 @"http://115.236.55.163:9093/lp-bus-msc/"
+#define kServerAddressTestWXpay @"http://115.236.55.163:9096/lp-pay-msc/"
+// 用户在线保持 
+#define kServerAddressTest4 @"http://115.236.55.163:9093//lp-author-msc/"
+
+// 提交头像信息  加载头像
+#define kServerAddressTest3 @"http://115.236.55.163:9093/lp-file-msc/"
+// 核对验证码 用户注册 密码重置 提交登陆信息 获取验证码
+//#define kServerAddressTest @"http://192.168.0.194:9093/lp-author-msc/"
+//// 系统参数请求 加载眼缘数据 请求用户信息 提交用户保存信息 附近人数据 用户详情 搜索数据
+//#define kServerAddressTest2 @"http://192.168.0.194:9093/lp-bus-msc/"
+//
+//// 用户在线保持
+//#define kServerAddressTest4 @"http://192.168.0.194:9093//lp-author-msc/"
+//
+//// 提交头像信息  加载头像
+//#define kServerAddressTest3 @"http://192.168.0.194:9093/lp-file-msc/"
+
+// ===================
+#define kUIColorFromRGB(rgbValue) [UIColor \
+colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+#define SEARCHHEIGHT [[UIScreen mainScreen] bounds].size.height
+
+// 字体 @"Arial"
+#define Typeface @"Helvetica-Bold"
+#define Typefaces @"Arial"
+
+#import "UIViewController+HUD.h"
+#import "AllRegular.h"
+#import "Masonry.h"
+#import "AllRegular.h"
+#import "ConditionObject.h"
+#import "NSURLObject.h"
+// ===================
+
+
+#define got(w) (((w)/320.0f) * [[UIScreen mainScreen] bounds].size.width)
+#define gotHeight(w) (((w)/568.0f) * [[UIScreen mainScreen] bounds].size.height)
+#define ScreenWidth [UIScreen mainScreen].bounds.size.width
+#define ScreenHeight [UIScreen mainScreen].bounds.size.height
+
+#define iPhone4 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+#define iPhone6 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750,1334), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define iPhonePlus ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242,2208), [[UIScreen mainScreen] currentMode].size) : NO)
+
+//iphone6P 放大模式
+#define iPhonePlusAM ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2001), [[UIScreen mainScreen] currentMode].size) : NO)
+
+//iphone6 放大模式
+#define iPhone6AM ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+
+
+#define HexRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+#define KEY @"2015$!@aiyoutech" //加密key可修改
+
+//#import "FMDBManager.h"
+#import "DBManager.h"
+#import "NSGetSystemTools.h"
+#import "NSGetTools.h"
+#import "JNKeychain.h"
+#import "ViewController.h"
+#import "EyeLuckViewController.h"
+#import "SearchViewController.h"
+//#import "MessageViewController.h"
+//#import "ChatViewController.h"
+#import "NearPeopleViewController.h"
+#import "MineViewController.h"
+#import "UIImageView+WebCache.h"
+#import "SecurityUtil.h"
+#import "GTMBase64.h"
+#import "AFNetworking.h"
+#import "AFHTTPRequestOperation.h"
+#import "Reachability.h"
+#include <sys/types.h>
+#include <sys/param.h>
+#include <sys/ioctl.h>
+#include <sys/socket.h>
+#include <net/if.h>
+#include <netinet/in.h>
+#include <net/if_dl.h>
+#include <sys/sysctl.h>
+
+#import "GCDAsyncSocket.h"
+#import "JSONKit.h"
+#import "MJRefresh.h"
+#import "FMDB.h"
+#import "SocketManager.h"
+
+
+//#ifndef ___Common_h
+//#define ___Common_h
+
+
+
+#define MyFont(s)  [UIFont systemFontOfSize:(s)]
+#define WColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+#define WColorAlpha(r,g,b,alp) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(alp)]
+//屏幕的宽度
+#define ScreenWidth [UIScreen mainScreen].bounds.size.width
+//屏幕的高度
+#define ScreenHeight [UIScreen mainScreen].bounds.size.height
+
+#define MyDefaults [NSUserDefaults standardUserDefaults]
+#define Mynotification [NSNotificationCenter defaultCenter]
+//发送消息的通知名
+#define SendMsgName @"sendMessage"
+//删除好友时发出的通知名
+#define DeleteFriend @"deleteFriend"
+//发送表情的按钮
+#define FaceSendButton @"faceSendButton"
+#define SendMessageResult @"SendMessageResult"
+#define GetMessageResult @"GetMessageResult"
+#define RecieveOnLineMessage @"recieveOnLineMessage"
+//服务器的ip地址
+#define ServerAddress @"60.172.229.162"
+//服务器的端口号
+#define ServerPort 5222
+//服务器的域名
+#define ServerName @"ios268"
+
+
+/** 表情相关 */
+// 表情的最大行数
+#define HMEmotionMaxRows 3
+// 表情的最大列数
+#define HMEmotionMaxCols 7
+// 每页最多显示多少个表情
+#define HMEmotionMaxCountPerPage (HMEmotionMaxRows * HMEmotionMaxCols - 1)
+
+// 通知
+// 表情选中的通知
+#define HMEmotionDidSelectedNotification @"HMEmotionDidSelectedNotification"
+// 点击删除按钮的通知
+#define HMEmotionDidDeletedNotification @"HMEmotionDidDeletedNotification"
+// 通知里面取出表情用的key
+#define HMSelectedEmotion @"HMSelectedEmotion"
+#import "UIView+MJ.h"
+#import "UIImage+CH.h"
+#import "NSObject+MJCoding.h"
+#import "NSObject+MJProperty.h"
+#import "NSObject+MJKeyValue.h"
+#import "ASIHTTPRequest.h"
+#import "ASIFormDataRequest.h"
+#import "DHTool.h"
+//#endif
+
